@@ -22,26 +22,43 @@ class MyApp extends StatelessWidget {
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                        width: 150,
-                        child: Image(image: AssetImage('images/dice1.png'))),
-                    Container(
-                        width: 150,
-                        child: Image(image: AssetImage('images/dice2.png')))
+                  children: <Widget>[
+                    Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.all(20),
+                          child: Image.asset('images/dice3.png'),
+                        )
+                    ),
+                    Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.all(20),
+                          child: Image.asset('images/dice4.png'),
+                        )
+                    ),
                   ],
                 ),
-                Card(
-                  margin: EdgeInsets.only(top: 30),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+                // Card(
+                //     margin: EdgeInsets.only(top: 30),
+                //     child: Padding(
+                //       padding:
+                //           EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+                //       child: Text(
+                //         'Roll Dice',
+                //         style: TextStyle(fontSize: 20),
+                //       ),
+                //     ))
+                ElevatedButton(
                     child: Text(
-                      'Roll Dice',
-                      style: TextStyle(
-                        fontSize: 20
-                      ),
+                        'Rolling Dice',
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white,
+                        ),
+
                     ),
-                  )
+                    style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(Colors.green)
+                    ),
                 )
               ],
             )),
